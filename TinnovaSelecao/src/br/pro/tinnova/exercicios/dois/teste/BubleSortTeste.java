@@ -8,7 +8,7 @@ public class BubleSortTeste
 {	public static void main(String[] args) 
 	{	int[] numeros = {5, 3, 2, 4, 7, 1, 0, 6};
 	
-		numeros = new BubleSort(numeros).getValores();
+		numeros = BubleSort.setOrdemNumerica(numeros);
 			
 		for(int numero:numeros) {System.out.print(numero+" ");}
 	}
