@@ -8,9 +8,9 @@ public class SomaMultiplos35
 		int soma = 0;
 		//limite dado de numero-1 pois queremos
 		//que seja abaixo do numero desejado.
-		for(int i = 0; i < numero-1; i++)
-		{	if((i+1)%3 == 0 || (i+1)%5 == 0)
-			{soma += (i+1);}
+		for(int i = 0; i < numero; i++)
+		{	if(i%3 == 0 || i%5 == 0)
+			{soma += i;}
 		}
 		JOptionPane.showMessageDialog(null, 
 			"Soma dos multiplos de 3 ou 5 vale: " 
