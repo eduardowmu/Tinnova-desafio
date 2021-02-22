@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.edu.domain.Veiculo;
 import br.com.edu.responses.Response;
+import br.com.edu.responses.ValidadorMarca;
 import br.com.edu.serviceImp.VeiculoService;
 
 @RestController
@@ -64,6 +65,9 @@ public class VeiculoController
 			//criar uma classe que permita retornar uma mensagem de resposta papdrão
 			return ResponseEntity.badRequest().body(new Response<Veiculo>(errors));
 		}
+		ValidadorMarca vm = new ValidadorMarca();
+		if(vm.validaMarca(veiculo.getMarca()) != null)
+		{return ResponseEntity.badRequest().body(vm.validaMarca(veiculo.getMarca()));}
 		return ResponseEntity.ok(new Response<Veiculo>(this.vs.save(veiculo)));
 	}
 }
